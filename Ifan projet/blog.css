@@ -1,0 +1,120 @@
+.blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+    padding: 0 15px; /* Évite que le texte colle aux bords de l'écran sur mobile */
+}
+.blog h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.blog p {
+    font-size: 20px;
+    text-align: center; /* Centré pour un meilleur rendu visuel */
+}
+.blog-contenu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Réduit légèrement pour gagner de la place */
+    margin-bottom: 100px;
+    width: 100%;
+}
+/* MISE À JOUR : Adaptatif sans hauteur bloquée */
+.blog-contenu .contenu {
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;        /* Prend toute la largeur sur mobile */
+    max-width: 420px;   /* Ne dépasse pas 420px sur grand écran */
+    background-color: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.61);
+    overflow: hidden;   /* Assure que l'image reste dans l'arrondi */
+    padding-bottom: 20px; /* Remplace le height fixe pour laisser respirer le bouton */
+}
+.blog-contenu .contenu img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Évite de déformer l'image */
+}
+.blog-contenu .contenu .contenu-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 15px;
+}
+.blog-contenu .contenu .contenu-details h3 {
+    font-size: 22px;
+    margin-top: 15px;
+}
+.blog-contenu .contenu .contenu-details p {
+    color: rgba(0, 0, 0, 0.733);
+    margin-top: 10px;
+    font-size: 16px; /* Légèrement réduit pour mobile */
+    text-align: initial;
+    padding: 10px 5px;
+    margin-bottom: 15px;
+}
+.blog-contenu .contenu .contenu-details hr {
+    width: 90%;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+.blog-contenu .contenu .contenu-details a {
+    margin-top: 15px;
+    width: 100%; /* Le lien prend toute la largeur */
+}
+.blog-contenu .contenu .contenu-details a button {
+    padding: 12px;
+    border-radius: 10px;
+    background-color: rgb(0, 116, 0);
+    color: white;
+    border: none;
+    font-size: 16px;
+    transition: 0.5s;
+    width: 100%; /* Le bouton remplit sa carte sur mobile */
+    cursor: pointer;
+}
+.blog-contenu .contenu .contenu-details a button:hover {
+    background-color: green;
+    transform: scale(1.02);
+}
+
+/* Badges */
+.badge-groupage, .badge-groupage-f {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+}
+.badge-groupage { background-color: #ff9800; }
+.badge-groupage-f { background-color: #ff0000; }
+
+/* Bloc Événement */
+.contenu .contenu-details .evenement {
+    margin-right: 0; /* Supprime le décalage fixe nuisible sur mobile */
+    margin-top: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ---- RESPONSIVE DICTIONARY (TABLETTES & MOBILES LARGES) ---- */
+@media (max-width: 768px) {
+    .blog h2 { font-size: 28px; }
+    .blog p { font-size: 18px; }
+    .blog-contenu { gap: 25px; }
+}
